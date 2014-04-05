@@ -6,8 +6,9 @@ jRemoteValidate is a jquery plugin, using to ajax request server and response me
 
 
 code example:
-  html  
--------
+===============
+  html code need include jquery.js and jRemoteValidate.js  
+
 ```html
 <html>
 <head>
@@ -27,7 +28,12 @@ code example:
 </html>
 ```
 
--------
+javascript code example:
+===============
+
+ loadImgURL is option, you can set it in jRemoteValidate.js
+ successHandle function is request finished callback function,
+ you can custom your message format with you response data.
 ```javascript
 
 
