@@ -31,9 +31,9 @@ code example:
 javascript code example:
 ===============
 
- loadImgURL is option, you can set it in jRemoteValidate.js.<br>
+ loadImgURL is option, you can config that in jRemoteValidate.js.<br>
  successHandle function is request finished callback function,
- you can custom your message's format with your response data.
+ you can custom message's format with the response data.
 ```javascript
 
 
