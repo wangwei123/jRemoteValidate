@@ -5,6 +5,8 @@ jRemoteValidate is a jquery plugin, using to ajax request server and response me
 
 
 
+demo: http://demo.it175.cn:8080/jValidate/test.html
+
 code example:
 ===============
   html code need include jquery.js and jRemoteValidate.js  
