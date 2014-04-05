@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>会员卡管理系统</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jRemoteValidate.js"></script>
+
+<style type="text/css">
+	.container {width:600px;margin-top:20px;}
+</style>
+
+</head>
+<body>
+<div>
+	<div>
+		<section>
+			<div>
+				<div class="page-header">
+					<h2>会员查询</h2>
+				</div>
+				<div id="cardContainer1" class="container">
+					<label for="mobile1" style="float:left;">状态1：</label>
+					<input type="text" id="mobile1" />
+				</div>
+				<div id="cardContainer2" class="container">
+					<label for="mobile2" style="float:left;">状态2：</label>
+					<input type="text" id="mobile2" />
+				</div>
+				<div id="cardContainer3" class="container">
+					<label for="mobile3" style="float:left;">状态3：</label>
+					<input type="text" id="mobile3" />
+				</div>
+				<br>
+			</div>
+		</section>
+	</div>
+</div>
+
+<script>
+
+$(function(){
+	$('#mobile1').jRemoteValidate({
+		url: 'json1.html',
+		//field: 'mobile',
+		renderTo: '#cardContainer1',
+		loadImgURL: 'loading_small.gif',
+		success: successHandle
+	});
+
+	$('#mobile2').jRemoteValidate({
+		url: 'json2.html',
+		//field: 'mobile',
+		renderTo: '#cardContainer2',
+		loadImgURL: 'loading_small.gif',
+		success: successHandle
+	});
+
+	$('#mobile3').jRemoteValidate({
+		url: 'json3.html',
+		//field: 'mobile',
+		renderTo: '#cardContainer3',
+		loadImgURL: 'loading_small.gif',
+		success: successHandle
+	});
+	
+	function successHandle(rs) {
+		var html = '';
+		if(rs.state == 1) {
+			html = '<p class="msg">姓名:<font color=#4682B4>'+rs.data.name+'</font>,余额:<font color=red>'+rs.data.balance+'</font>元</p>';
+		}
+		if(rs.state == 2) html = '<p class="msg"><font color=red>卡号不存在</font></p>';
+		if(rs.state == 3) html = '<p class="msg"><font color=red>服务器异常 </font></p>';
+		
+		
+		return html;
+	}
+});
+</script>
+</body>
+</html>
