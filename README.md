@@ -5,7 +5,7 @@ jQuery 插件 jRemoteValidate提供远程验证, 通过将指定ID的文本框�
 
 
 
-demo: http://demo.it175.cn:8080/jValidate/test.html
+demo演示地址: http://www.it175.cn/demo/jValidate/
 
 代码示例:
 ===============
